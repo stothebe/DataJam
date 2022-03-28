@@ -11,7 +11,7 @@ https://www.countyhealthrankings.org/explore-health-rankings/rankings-data-docum
 
 2021 HPSA - Mental Health Data collected by Health Resources & Services Administration (HRSA). https://data.hrsa.gov/data/download
 
-2020 Broadband Data collected my Microsoft. https://github.com/microsoft/USBroadbandUsagePercentages/tree/master/dataset
+2020 Broadband Data collected by Microsoft. https://github.com/microsoft/USBroadbandUsagePercentages/tree/master/dataset
 
 
 ## Tools
