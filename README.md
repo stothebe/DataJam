@@ -19,7 +19,7 @@ https://www.countyhealthrankings.org/explore-health-rankings/rankings-data-docum
 ## Tools
 SQL Server for data cleaning and analysis 
 
-Tableau for visualization. Link to visualization: https://public.tableau.com/app/profile/sarah.bang/viz/DatajamProject/Dashboard1
+Tableau for visualization. Link to visualization: https://public.tableau.com/app/profile/sarah.bang/viz/ClosingtheDigitalDivideTelehealth/Story1
 
 ## Methods
 
