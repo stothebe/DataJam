@@ -29,6 +29,8 @@ Demographic information including race/ethnicity, sex, age, proportion of adults
 Interactive dashboard was created using Tableau Public to map US counties and the disparities in access to mental healthcare, telecommunications infrastructure, and the level of digital literacy based on demographic information. 
 
 
+## Presentation
+https://tinyurl.com/healthequity4you
 
 
 ## Reference
