@@ -52,9 +52,9 @@ with variables as(
 SELECT  l.state, l.county, l.population, l.senior_percentage,l.percentage_black, l.Percentage_American_Indian_Alaska_Native, l.Percentage_Hispanic, 
 ROUND(l.percentage_black+ l.Percentage_American_Indian_Alaska_Native+l.Percentage_Hispanic,1) as urm_percentage,
   m.female, m.completed_high_school, m.percentage_under_povertyline, l.physical_distress_percentage, l.priamrycare_provider_quartile,
-l.percentage_not_proficient_in_english, .pop, l.statepop, area_2010, c.Mental_Distress_Percentage, c.hpsa_score, 
+l.percentage_not_proficient_in_english, countypop, l.statepop, area_2010, c.Mental_Distress_Percentage, c.hpsa_score, 
 t.no_pc, t.no_smartphone, t.broadband_access, t.broadband_usage, ROUND(pop/statepop,4) as countytostatepopratio
-FROM (select *, CAST(population as FLOAT) as pop, 
+FROM (select *, CAST(population as FLOAT) as countypop, 
     CAST(FIRST_VALUE(population) OVER(PARTITION BY state ORDER BY county) as float) as statepop FROM demographics) as l
 JOIN mh_care c 
 ON l.state = c.state AND l.county = c.county
@@ -69,6 +69,6 @@ ON c.state = a.state AND c.county = a.county
 -- calculating cost for developing telecommunications infrastructure
 
 SELECT *, ROUND(area_2010 * (1-broadband_access/100) * 27000,0) as broadband_cost,
-     ROUND(pop * no_smartphone/100,0)*317 as smartphone_cost,
-     ROUND(pop*no_pc/100 * 500,0) as pc_cost
+        ROUND((1-broadband_usage/100)*countypop * 50),0) as durable_braodband_cost,
+         ROUND(countypop * no_smartphone/100,0)*317 as smartphone_cost
 FROM variables 
